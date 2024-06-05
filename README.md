@@ -83,5 +83,5 @@ for idx in [100, 200, 215]:
 ## Authors
 
 - [Abdullah Abdelhafez](https://www.github.com/aahafez)
-- [Farah Afifi](https://www.github.com/)
+- [Farah Afifi](https://github.com/Farahafifii)
 
