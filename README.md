@@ -69,9 +69,19 @@ from lime.lime_text import LimeTextExplainer
 
 explainer = LimeTextExplainer(class_names=['deceptive', 'truthful'])
 
-for idx in [100, 200, 215]:
+# Pick an example to explain
+idx = 405
+example_text = df['text'].iloc[idx]
+
+def predict_proba(texts):
+    texts_transformed = tfidf.transform(texts).toarray()
+    return clf.predict_proba(texts_transformed)
+
+for idx in [100, 415, 405]:  # Change the indices as needed
     example_text = df['text'].iloc[idx]
+    # Generate explanation for the chosen example
     exp = explainer.explain_instance(example_text, predict_proba, num_features=10)
+
     exp.show_in_notebook(text=example_text)
 ```
 ## Lime Explanation Examples
